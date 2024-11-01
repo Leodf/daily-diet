@@ -1,20 +1,27 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { ThemeProvider } from "styled-components/native";
 import Home from "./src/screens/Home";
+import theme from "src/theme";
+import {
+  useFonts,
+  NunitoSans_400Regular,
+  NunitoSans_700Bold,
+} from "@expo-google-fonts/nunito-sans";
+import { ActivityIndicator } from "react-native";
+import { StatusBar } from "expo-status-bar";
 
 export default function App() {
+  let [fontsLoaded] = useFonts({
+    NunitoSans_400Regular,
+    NunitoSans_700Bold,
+  });
+  if (!fontsLoaded) {
+    return <ActivityIndicator />;
+  }
+
   return (
-    <View style={styles.container}>
+    <ThemeProvider theme={theme}>
+      <StatusBar style="dark" backgroundColor="transparent" translucent />
       <Home />
-    </View>
+    </ThemeProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

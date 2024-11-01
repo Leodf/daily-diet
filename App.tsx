@@ -8,6 +8,7 @@ import {
 } from "@expo-google-fonts/nunito-sans";
 import { StatusBar } from "expo-status-bar";
 import Loading from "@components/Loading";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -16,9 +17,11 @@ export default function App() {
   });
 
   return (
-    <ThemeProvider theme={theme}>
-      <StatusBar style="dark" backgroundColor="transparent" translucent />
-      {fontsLoaded ? <Home /> : <Loading />}
-    </ThemeProvider>
+    <SafeAreaProvider>
+      <ThemeProvider theme={theme}>
+        <StatusBar style="dark" backgroundColor="transparent" translucent />
+        {fontsLoaded ? <Home /> : <Loading />}
+      </ThemeProvider>
+    </SafeAreaProvider>
   );
 }

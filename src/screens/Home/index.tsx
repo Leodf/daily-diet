@@ -1,12 +1,12 @@
 import React from "react";
 import { Container, Title } from "./styles";
-import { User } from "phosphor-react-native";
+import Header from "@components/Header";
 
 export default function Home() {
   return (
     <Container>
-      <User size={64} />
-      <Title>Daily Diet</Title>
+      <Header />
+      <Title> Hello</Title>
     </Container>
   );
 }

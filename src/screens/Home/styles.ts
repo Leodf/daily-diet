@@ -6,9 +6,3 @@ export const Container = styled(SafeAreaView)`
   padding: 24px;
   background-color: ${({ theme }) => theme.COLORS.BASE.GRAY_700};
 `;
-
-export const Title = styled.Text`
-  color: ${({ theme }) => theme.COLORS.BRAND.GREEN.DARK};
-  font-size: ${({ theme }) => theme.FONT_SIZE.XXL}px;
-  font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
-`;

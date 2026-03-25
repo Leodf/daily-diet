@@ -1,12 +1,13 @@
 import React from "react";
-import { Container, Title } from "./styles";
+import { Container } from "./styles";
 import Header from "@components/Header";
+import StatisticCard from "@components/StatisticsCard";
 
 export default function Home() {
   return (
     <Container>
       <Header />
-      <Title> Hello</Title>
+      <StatisticCard />
     </Container>
   );
 }
